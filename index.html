@@ -49,11 +49,10 @@
         z-index: 0;
       }
       header {
-
         width: 100vw;
         display: flex;
         column-gap: 1.5vw;
- 
+
         padding-top: 1vh;
         padding-bottom: 1vh;
         z-index: 2;
@@ -114,7 +113,7 @@
         width: 3vw;
         position: fixed;
         top: 90%;
-        left: 2%;
+        left: 95%;
 
         z-index: 5;
         cursor: pointer;
@@ -141,15 +140,15 @@
         padding-left: 1%;
         padding-right: 1%;
         width: 20vw;
-        height: 60vh;
-        background-color: var(--grissombre);
+        height: 72vh;
+        background-color: rgba(0, 0, 0, 0.418);
         position: fixed;
         display: flex;
         flex-direction: column;
         overflow-y: scroll;
         align-items: center;
         top: 48%;
-        left: 15%;
+        left: 85%;
         transform: translate(-50%, -50%);
         border-radius: 5px;
         word-wrap: break-word;
@@ -158,12 +157,16 @@
         box-shadow: 0px 0px 8px rgb(62, 62, 62);
         z-index: 0;
         border: solid 1px black;
+        scroll-behavior: smooth;
+        scrollbar-color: rgb(104, 104, 104) rgb(0, 0, 0);
+        scrollbar-width: 0px;
       }
       .textchat {
         text-align: center;
         padding-left: 0.8vw;
         padding-right: 0.8vw;
-
+        padding-top: 1vw;
+        padding-bottom: 1vw;
         color: rgb(255, 255, 255);
         font-weight: 100;
         font-size: 1vw;
@@ -190,24 +193,38 @@
         height: 2vw;
         outline: none;
         background-color: var(--grissombre);
-        width: 17.5vw;
+        width: 10.5vw;
         color: rgb(255, 255, 255);
         position: fixed;
         z-index: 8;
-        top: 84%;
-        left: 15%;
+        top: 89%;
+        left: 85%;
         transform: translate(-50%, -50%);
-        border: none;
         border: solid 1px rgb(0, 0, 0);
         padding-left: 1vw;
         padding-right: 1vw;
         font-size: 1.1vw;
         box-shadow: 0px 0px 8px rgb(71, 71, 71);
-        font-family: "Site";
-        letter-spacing: 1.5px;
+
+        border-radius: 5px;
       }
       #inputchat:focus {
         outline: none;
+      }
+      #spanchat {
+        position: fixed;
+        z-index: 9;
+        font-size: 1.5vw;
+        color: var(--grisclair);
+        top: 80%;
+        left: 97.5%;
+        transform: translate(-50%, -50%);
+        will-change: filter;
+        cursor: pointer;
+      }
+      #spanchat:hover {
+        transition: 0.5s linear;
+        color: rgb(255, 255, 255);
       }
       #textsplash {
         margin-top: 15vw;

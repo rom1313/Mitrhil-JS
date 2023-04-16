@@ -15,9 +15,7 @@ let tab = [
 let app = { username: "invité" };
 // ! ------------------------------------------- Composant Hello -------------------
 let Home = {
-  onupdate: function (vnode) {
-    console.log("composant a changé");
-  },
+  onupdate: function (vnode) {},
   view: function () {
     return m("div", [m(Chatlogo, { message: "Hello" })]);
   },
@@ -34,7 +32,11 @@ var Splash = {
 
 var Nav = {
   view: function () {
-    return m("div", { class: "blocknav" }, [m("a", { href: "#!/home" }, "Home"), m("a", { href: "#!/splash" }, "Splash"),m("a", { href: "#!/splash" }, "Shop")]);
+    return m("div", { class: "blocknav" }, [
+      m("a", { href: "#!/home" }, "Home"),
+      m("a", { href: "#!/splash" }, "Splash"),
+      m("a", { href: "#!/splash" }, "Shop"),
+    ]);
   },
 };
 m.mount(document.querySelector("#navcomponent"), Nav);
@@ -60,14 +62,52 @@ var Chatlogo = {
 // ! ------------------------------------------- Composant Chat-------------------
 
 var Chat = {
+  oninit: function (vnode) {
+    setTimeout(() => {
+      document.querySelector("#chat").lastChild.scrollIntoView();
+    }, 50);
+  },
   view: function () {
     return m("div", {}, [
-      m("input", { id: "inputchat" }),
-      m("div", { id: "chat" }, [
-        tab.map(function (elem) {
-          return m("div", { id: "blocktext" }, [m("p", { class: "pseudochat" }, elem.pseudo), m("p", { class: "textchat" }, elem.text)]);
-        }),
-      ]),
+      m(
+        "span",
+        {
+          id: "spanchat",
+          onclick: function () {
+            document.querySelector("#chat").firstChild.scrollIntoView();
+          },
+        },
+        "⬆"
+      ),
+      m("input", {
+        id: "inputchat",
+        oninput: function (e) {
+          console.log(e.target.value);
+        },
+        onkeyup: function (e) {
+          if ((e.code === "Enter" && e.target.value != "") || (e.code === "NumpadEnter" && e.target.value != "")) {
+            let objet = { pseudo: `${app.username}`, text: `${e.target.value}` };
+            tab.push(objet);
+            console.table(tab);
+            setTimeout(() => {
+              document.querySelector("#chat").lastChild.scrollIntoView();
+            }, 50);
+            e.target.value = "";
+          }
+        },
+      }),
+      m(
+        "div",
+        {
+          id: "chat",
+          onclick: function (e) {},
+        },
+        [
+          tab.map(function (elem) {
+            return m("div", { id: "blocktext" }, [m("p", { class: "pseudochat" }, elem.pseudo), m("p", { class: "textchat" }, elem.text)]);
+          }),
+        ]
+      ),
     ]);
   },
 };
@@ -88,6 +128,7 @@ var chatildaa = function () {
   });
 };
 // ! ------------------------------------------- Global event -------------------
-onkeyup = () => {
+onkeyup = (e) => {
   /*  m.mount(root, null); */
+
 };
