@@ -1,7 +1,6 @@
 {
   "dependencies": {
-    "esbuild": "^0.17.16",
-    "mithril": "^2.2.2"
+    "esbuild": "^0.17.16"
   },
   "scripts": {
     "bundle": "esbuild index.js --bundle --minify --outfile=bundle.js --watch"

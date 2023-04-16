@@ -40,11 +40,11 @@
        inkscape:collect="always">
       <stop
          id="stop3948"
-         style="stop-color:#525252;stop-opacity:1;"
+         style="stop-color:#686868;stop-opacity:1;"
          offset="0" />
       <stop
          id="stop3950"
-         style="stop-color:#393939;stop-opacity:1;"
+         style="stop-color:#333333;stop-opacity:1;"
          offset="1" />
     </radialGradient>
     <linearGradient
@@ -57,11 +57,11 @@
        inkscape:collect="always">
       <stop
          id="stop4864"
-         style="stop-color:#4a4a4a;stop-opacity:1;"
+         style="stop-color:#363636;stop-opacity:1;"
          offset="0" />
       <stop
          id="stop4866"
-         style="stop-color:#000000;stop-opacity:0"
+         style="stop-color:#161616;stop-opacity:0;"
          offset="1" />
     </linearGradient>
     <linearGradient
@@ -75,7 +75,7 @@
        inkscape:collect="always">
       <stop
          id="stop4864-2"
-         style="stop-color:#000000"
+         style="stop-color:#000000;stop-opacity:1;"
          offset="0" />
       <stop
          id="stop4866-7"
@@ -87,12 +87,12 @@
      id="base"
      bordercolor="#666666"
      inkscape:pageshadow="2"
-     inkscape:window-y="0"
+     inkscape:window-y="36"
      pagecolor="#ffffff"
      inkscape:window-height="728"
      inkscape:window-maximized="0"
      inkscape:zoom="0.91163817"
-     inkscape:window-x="0"
+     inkscape:window-x="49"
      showgrid="false"
      borderopacity="1.0"
      inkscape:current-layer="svg2"

@@ -19,20 +19,7 @@ let Home = {
     console.log("composant a changé");
   },
   view: function () {
-    return m("main", [
-      // changed the next lin
-      m(
-        "button",
-        {
-          onclick: function () {
-            count++;
-          },
-        },
-        count + " clicks"
-      ),
-      m("a", { href: "#!/splash" }, "Splash"),
-      m(Chatlogo, { message: "Hello" }),
-    ]);
+    return m("div", [m(Chatlogo, { message: "Hello" })]);
   },
 };
 
@@ -40,24 +27,17 @@ let Home = {
 
 var Splash = {
   view: function () {
-    return m("div", { class: "block" }, [
-      m("a", { href: "#!/hello" }, "home"),
-      m(
-        "h1",
-        {
-          onclick: function () {
-            chatildaa();
-          },
-        },
-        text
-      ),
-
-      tab.map(function (user) {
-        return m("h2", { class: "h2" }, user);
-      }),
-    ]);
+    return m("h1", { id: "textsplash" }, "Heeloo splash");
   },
 };
+// ! ------------------------------------------- Composant Nav -------------------
+
+var Nav = {
+  view: function () {
+    return m("div", { class: "blocknav" }, [m("a", { href: "#!/home" }, "Home"), m("a", { href: "#!/splash" }, "Splash"),m("a", { href: "#!/splash" }, "Shop")]);
+  },
+};
+m.mount(document.querySelector("#navcomponent"), Nav);
 // ! ------------------------------------------- Composant Chatlogo-------------------
 
 var Chatlogo = {
@@ -109,7 +89,5 @@ var chatildaa = function () {
 };
 // ! ------------------------------------------- Global event -------------------
 onkeyup = () => {
-  console.log("touche !!!");
-  count++;
   /*  m.mount(root, null); */
 };
