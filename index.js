@@ -65,7 +65,7 @@ var Chat = {
   oninit: function (vnode) {
     setTimeout(() => {
       document.querySelector("#chat").lastChild.scrollIntoView();
-    }, 50);
+    }, 100);
   },
   view: function () {
     return m("div", {}, [
@@ -91,7 +91,7 @@ var Chat = {
             console.table(tab);
             setTimeout(() => {
               document.querySelector("#chat").lastChild.scrollIntoView();
-            }, 50);
+            }, 100);
             e.target.value = "";
           }
         },
